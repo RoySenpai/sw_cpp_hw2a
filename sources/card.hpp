@@ -1,0 +1,5 @@
+namespace ariel {
+    class Card {
+
+    };
+};
