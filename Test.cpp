@@ -20,7 +20,7 @@ TEST_CASE("Test 1 - Initialization") {
     CHECK(p2.cardesTaken() == 0);
 }
 
-TEST_CASE("Test 2 - Playing") {
+TEST_CASE("Test 2 - Playing 5 turns") {
     Player p1("Alice");
     Player p2("Bob");
 
@@ -34,4 +34,18 @@ TEST_CASE("Test 2 - Playing") {
     CHECK(p2.stacksize() == 21);
     CHECK(p1.cardesTaken() == 0);
     CHECK(p2.cardesTaken() == 0);
+}
+
+TEST_CASE("Test 3 - Game end (26 turns)") {
+    Player p1("Alice");
+    Player p2("Bob");
+
+    Game game(p1,p2);
+
+    game.playAll();
+
+    CHECK(p1.stacksize() == 0);
+    CHECK(p2.stacksize() == 0);
+    CHECK(p1.cardesTaken() == 26);
+    CHECK(p2.cardesTaken() == 26);
 }
