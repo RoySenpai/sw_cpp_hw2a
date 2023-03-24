@@ -13,6 +13,10 @@ namespace ariel {
         return this->cTaken;
     }
 
+    std::string Player::getName() {
+        return this->name;
+    }
+
     Player::Player(std::string name) {
         this->name = name;
         this->sSize = 26;

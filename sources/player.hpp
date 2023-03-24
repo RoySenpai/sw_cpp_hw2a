@@ -10,6 +10,8 @@ namespace ariel
             int cTaken;
 
         public:
+            std::string getName();
+
             int stacksize();
 
             int cardesTaken();
