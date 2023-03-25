@@ -5,18 +5,6 @@ using namespace std;
 #include "player.hpp"
 
 namespace ariel {
-    int Player::stacksize() {
-        return this->sSize;
-    }
-
-    int Player::cardesTaken() {
-        return this->cTaken;
-    }
-
-    std::string Player::getName() {
-        return this->name;
-    }
-
     Player::Player(std::string name) {
         this->name = name;
         this->sSize = 26;

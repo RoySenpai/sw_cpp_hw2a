@@ -8,13 +8,18 @@ namespace ariel
             std::string name;
             int sSize;
             int cTaken;
+            bool inGame;
 
         public:
-            std::string getName();
+            int stacksize() { return this->sSize; }
 
-            int stacksize();
+            int cardesTaken() { return this->cTaken; }
 
-            int cardesTaken();
+            bool isInGame() { return this->inGame; }
+
+            void setInGame(bool status) { this->inGame = status; }
+
+            std::string getName() { return this->name; }
 
             Player(std::string name);
 

@@ -7,6 +7,7 @@ namespace ariel
         private:
             Player& p1;
             Player& p2;
+            int turn;
 
         public:
             // Constuctor: Create a game with two players
