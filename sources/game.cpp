@@ -57,7 +57,8 @@ namespace ariel {
             cout << "printLastTurn" << endl;
 
         else
-            throw logic_error("No turns have been played yet!");
+            //throw logic_error("No turns have been played yet!");
+            cout << "No turns have been played yet!" << endl;
     }
 
     //playes the game untill the end
@@ -77,7 +78,8 @@ namespace ariel {
             cout << p2.getName() << " wins" << endl;
 
         else
-            throw logic_error("Game is not finished yet!");
+            //throw logic_error("Game is not finished yet!");
+            cout << "Game is not finished yet!" << endl;
     }
 
     // prints all the turns played one line per turn (same format as game.printLastTurn())
