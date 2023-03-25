@@ -1,20 +1,36 @@
+/*
+ *  Software Systems CPP Course Assignment 2
+ *  Copyright (C) 2023  Roy Simanovich
+ * 
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ * 
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
 #include <iostream>
 #include <stdexcept>
-#include "player.hpp"
 #include "game.hpp"
 
 using namespace std;
 
 namespace ariel {
     Game::Game(Player& plr1, Player& plr2): p1(plr1), p2(plr2) {
-        if (plr1.getName() == plr2.getName())
-            throw invalid_argument("Player 1 and PLayer 2 are the same player!");
-
-        else if (plr1.getName() == "")
+        if (plr1.getName().empty())
             throw invalid_argument("Player 1 has no name!");
 
-        else if (plr2.getName() == "")
+        else if (plr2.getName().empty())
             throw invalid_argument("Player 2 has no name!");
+
+        else if (plr1.getName() == plr2.getName())
+            throw invalid_argument("Player 1 and PLayer 2 are the same player!");
 
         else if (plr1.isInGame() == true)
             throw invalid_argument("Player 1 is already in a game!");
@@ -30,22 +46,13 @@ namespace ariel {
 
             this->p1.setInGame(true);
             this->p2.setInGame(true);
-
-            cout << "Game has been created" << endl;
         }
-    }
-
-    Game::~Game() {
-        cout << "Game has been destroyed" << endl;
     }
 
     // play a single turn
     void Game::playTurn() {
         if (p1.isInGame() == true && p2.isInGame() == true)
-        {
-            cout << "playTurn" << endl;
             this->turn++;
-        }
 
         else
             throw logic_error("Game is over!");

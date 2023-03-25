@@ -1,28 +1,47 @@
+/*
+ *  Software Systems CPP Course Assignment 2
+ *  Copyright (C) 2023  Roy Simanovich
+ * 
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ * 
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
 #pragma once
+
+#include <iostream>
+#include <string>
+using namespace std;
 
 namespace ariel
 {
     class Player
     {
         private:
-            std::string name;
+            string name;
             int sSize;
             int cTaken;
             bool inGame;
 
         public:
-            int stacksize() { return this->sSize; }
+            int stacksize() const { return this->sSize; }
 
-            int cardesTaken() { return this->cTaken; }
+            int cardesTaken() const { return this->cTaken; }
 
-            bool isInGame() { return this->inGame; }
+            bool isInGame() const { return this->inGame; }
 
             void setInGame(bool status) { this->inGame = status; }
 
-            std::string getName() { return this->name; }
+            string getName() { return this->name; }
 
-            Player(std::string name);
-
-            ~Player();
+            Player(string name);
     };
 }
